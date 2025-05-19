@@ -1,0 +1,15 @@
+
+name: schedule_event_example
+
+on: 
+ schedule:
+ - cron: '0/5 * * * *'
+
+jobs:
+  buildjob:
+    runs-on: 'ubuntu-latest'
+    steps:
+    -  name: display the hello-world
+       run: echo "Hello from schedule example"
+    
+    
