@@ -1,0 +1,23 @@
+
+name: sample environment example
+
+on:
+  workflow_dispatch
+
+jobs:
+  buildjob:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: display the content
+      run: echo "build job"
+    
+  deployjob:
+    needs: buildjob
+    environment: dev
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: display the content
+      run: echo "hello feom deploy job"
+  
+
+
