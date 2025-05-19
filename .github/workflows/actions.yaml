@@ -3,6 +3,7 @@ name: sample powershell
 on:
     push:
         branches: ["main"]
+    workflow_dispatch:     
 
       
 
