@@ -16,6 +16,7 @@ jobs:
         name: drop
         path: build.txt
   deploy:
+    needs: build
     runs-on: 'ubuntu-latest'
     steps:
     - name: Download a Build Artifact
