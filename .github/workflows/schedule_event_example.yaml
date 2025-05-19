@@ -3,7 +3,7 @@ name: schedule_event_example
 
 on: 
  schedule:
- - cron: '0/5 * * * *'
+ - cron: '*/5 * * * *'
 
 jobs:
   buildjob:
