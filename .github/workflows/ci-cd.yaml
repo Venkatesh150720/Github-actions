@@ -1,0 +1,29 @@
+name: ci-cd workflow
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run:|
+          echo "Hello world" >> output.txt
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: drop
+          path: output.txt
+
+  deploy:
+    environment: production
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4.3.0
+        with:
+          name: drop
+
+      - run: |
+          cat output.txt            
