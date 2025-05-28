@@ -5,11 +5,9 @@ on: [push]
 jobs:
   build_job:
     runs-on: 'ubuntu-latest'
-    env:
-      my_value: ${{ github.event }}
     steps:
-      - name: print the branch name
-        run: echo "Branch name ${{ env.my_value }}"
+      - name: print the name
+        run: echo "name ${{ github.actor }}"
 
 
 
