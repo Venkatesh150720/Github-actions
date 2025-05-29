@@ -27,7 +27,7 @@ jobs:
             # echo "Initiated the workflow by $env:GITHUB_ACTOR"  
             # echo "ID of the who is Initiated the workflow  $env:GITHUB_ACTOR_ID"  
             # echo "WORK FLOW RUN URL $env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID "  
-            echo "Setting the env variable name=$GITHUB_ACTOR" >> "$GITHUB_OUTPUT"
+            echo "name=venkatesh" >> "$GITHUB_OUTPUT"
             
             
 
