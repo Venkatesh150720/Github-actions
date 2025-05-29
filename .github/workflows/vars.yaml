@@ -10,7 +10,7 @@ jobs:
   build_job:
     runs-on: ubuntu-latest
     steps:
-        - name: nameof the person
+        - name: name of the person print from configuration variables in the repository
           run: echo "My name is $name"
           env:
             name: ${{ vars.name }}
