@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: nameof the person
-          run: echo"name $name"
+          run: echo "My name is $name"
           env:
             name: ${{ vars.name }}
 
