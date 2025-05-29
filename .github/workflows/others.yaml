@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: print the name
         run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }}"
-
+  if_job:
+    runs-on: 'ubuntu-latest'
+    if: contains('venky', 'ky')
+    steps:
+      - name: if stament sucessfull
+        run: echo " if statement is true"
 
 
