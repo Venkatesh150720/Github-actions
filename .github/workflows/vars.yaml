@@ -1,0 +1,19 @@
+name: vars workflow
+
+on: [push]
+
+env:
+    name: ${{ vars.name }}
+
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: nameof the person
+          run: "name $name"
+          env:
+            name: ${{ vars.name }}
+
+
+
+
