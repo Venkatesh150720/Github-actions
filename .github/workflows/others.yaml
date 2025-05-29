@@ -25,7 +25,17 @@ jobs:
             echo "Owner and repositiory of the action $env:GITHUB_ACTION_REPOSITORY"
             echo "Initiated the workflow by $env:GITHUB_ACTOR"  
             echo "ID of the who is Initiated the workflow  $env:GITHUB_ACTOR_ID"  
-            echo "WORK FLOW RUN URL $env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID "          
+            echo "WORK FLOW RUN URL $env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID "  
+            echo "Setting the env variable $env:GITHUB_ACTOR=$env:GITHUB_ENV"
+            
+            
+  env_variables:
+    needs: if-Windows-else
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing the env variable
+        run: echo "env variable $env:GITHUB_ENV"
+
           
 
         
