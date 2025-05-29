@@ -14,35 +14,39 @@ jobs:
   if-Windows-else:
     runs-on: ubuntu-latest
     steps:
-        - name: default env variables in git hub
-          id: env_variables
-          # if: runner.os == 'Windows'
-          run: |
-            # echo "The operating system on the runner is $env:RUNNER_OS."
-            # echo "Name of the repo is $env:GITHUB_REPOSITORY"
-            # echo "Run id of the repo is $env:GITHUB_RUN_ID"
-            # echo "Action name  of the repo is $env:GITHUB_ACTION" 
-            # echo "Action where its located is $env:GITHUB_ACTION_PATH"
-            # echo "Owner and repositiory of the action $env:GITHUB_ACTION_REPOSITORY"
-            # echo "Initiated the workflow by $env:GITHUB_ACTOR"  
-            # echo "ID of the who is Initiated the workflow  $env:GITHUB_ACTOR_ID"  
-            # echo "WORK FLOW RUN URL $env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID "  
-            echo "name=venkatesh" >> "$GITHUB_OUTPUT"
+        # - name: default env variables in git hub
+        #   id: env_variables
+        #   # if: runner.os == 'Windows'
+        #   run: |
+        #     # echo "The operating system on the runner is $env:RUNNER_OS."
+        #     # echo "Name of the repo is $env:GITHUB_REPOSITORY"
+        #     # echo "Run id of the repo is $env:GITHUB_RUN_ID"
+        #     # echo "Action name  of the repo is $env:GITHUB_ACTION" 
+        #     # echo "Action where its located is $env:GITHUB_ACTION_PATH"
+        #     # echo "Owner and repositiory of the action $env:GITHUB_ACTION_REPOSITORY"
+        #     # echo "Initiated the workflow by $env:GITHUB_ACTOR"  
+        #     # echo "ID of the who is Initiated the workflow  $env:GITHUB_ACTOR_ID"  
+        #     # echo "WORK FLOW RUN URL $env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID "  
+        #     echo "name=venkatesh" >> "$GITHUB_OUTPUT"
             
             
 
-        - name: printing the env variable
-          env:
-            name: ${{ steps.env_variables.outputs.name }}
-          run: echo "env variable $name"  
+        # - name: printing the env variable
+        #   env:
+        #     name: ${{ steps.env_variables.outputs.name }}
+        #   run: echo "env variable $name"  
 
-        - name: Set color
-          id: color-selector
-          run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
-        - name: Get color
-          env:
-            SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
-          run: echo "The selected color is $SELECTED_COLOR"
+        # - name: Set color
+        #   id: color-selector
+        #   run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+        # - name: Get color
+        #   env:
+        #     SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+        #   run: echo "The selected color is $SELECTED_COLOR"
+
+        - name:  mask value
+          run: echo "::add-mask::Mona The Octocat"
+
 
 
           
