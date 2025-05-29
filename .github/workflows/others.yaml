@@ -8,12 +8,13 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     steps:
       - name: print the name
-        run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }}"
+        run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }} >> GITHUB_ENV"
   if_job:
+    needs: build_job
     runs-on: 'ubuntu-latest'
     if: contains('venky', 'ky')
     steps:
       - name: if stament sucessfull
-        run: echo " if statement is true"
+        run: echo " if statement is true and owner name $env.GITHUB_ENV"
 
 
