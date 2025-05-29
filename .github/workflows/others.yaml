@@ -14,12 +14,16 @@ jobs:
   if-Windows-else:
     runs-on: Windows-latest
     steps:
-        - name: condition 1
+        - name: default env variables in git hub
           if: runner.os == 'Windows'
-          run: echo "The operating system on the runner is $env:RUNNER_OS."
-        - name: condition 2
-          if: runner.os != 'Windows'
-          run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
+          run: |
+            echo "The operating system on the runner is $env:RUNNER_OS."
+            echo "Name of the repo is $env:GITHUB_REPOSITORY"
+            echo "Run id of the repo is $env:GITHUB_RUN_ID"
+            echo "Action name  of the repo is $env:GITHUB_ACTION" 
+            echo "Initiated the workflow by $env:GITHUB_ACTOR"  
+          
+
         
 
 
