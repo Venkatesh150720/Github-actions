@@ -30,14 +30,11 @@ jobs:
             echo "Setting the env variable $name=$env:GITHUB_ACTOR" >> "GITHUB_OUTPUT"
             
             
-  env_variables:
-    needs: if-Windows-else
-    runs-on: ubuntu-latest
-    steps:
-      - name: printing the env variable
-        run: echo "env variable $name"
-        env:
-          name: ${{ job.if-Windows-else.steps.env_variables.outputs.name }}
+
+        - name: printing the env variable
+          run: echo "env variable $name"
+          env:
+            name: ${{ steps.env_variables.outputs.name }}
 
           
 
