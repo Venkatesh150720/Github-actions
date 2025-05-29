@@ -31,14 +31,14 @@ jobs:
             
             
 
-        # - name: printing the env variable
-        #   env:
-        #     name: ${{ steps.env_variables.outputs.name }}
-        #   run: echo "env variable $name"  
+        - name: printing the env variable
+          env:
+            name: ${{ steps.env_variables.outputs.name }}
+          run: echo "env variable $name"  
 
         - name: Set color
           id: color-selector
-          run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+          run: echo "SELECTED_COLOR=green" >> "$env:$GITHUB_OUTPUT"
         - name: Get color
           env:
             SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
