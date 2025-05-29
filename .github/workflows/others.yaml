@@ -3,12 +3,12 @@ name: others workflow
 on: [push]
 
 jobs:
-  build_job:
-    runs-on: 'ubuntu-latest'
-    if: ${{ github.event_name == 'push' }}
-    steps:
-      - name: print the name
-        run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }} " >> GITHUB_OUTPUT
+  # build_job:
+  #   runs-on: 'ubuntu-latest'
+  #   if: ${{ github.event_name == 'push' }}
+  #   steps:
+  #     - name: print the name
+  #       run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }} " >> GITHUB_OUTPUT
 
   
   if-Windows-else:
@@ -32,9 +32,9 @@ jobs:
             
 
         - name: printing the env variable
-          run: echo "env variable $name"
           env:
             name: ${{ steps.env_variables.outputs.name }}
+          run: echo "env variable $name"  
 
           
 
