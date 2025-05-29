@@ -1,4 +1,5 @@
 name: vars workflow
+run-name: sample
 
 on: [push]
 
