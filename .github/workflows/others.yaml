@@ -11,12 +11,12 @@ jobs:
   #       run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }} " >> GITHUB_OUTPUT
 
   
-  if-Windows-else:
-    runs-on: ubuntu-latest
-    steps:
-        # - name: default env variables in git hub
-        #   id: env_variables
-        #   # if: runner.os == 'Windows'
+  # if-Windows-else:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #       # - name: default env variables in git hub
+  #       #   id: env_variables
+  #       #   # if: runner.os == 'Windows'
         #   run: |
         #     # echo "The operating system on the runner is $env:RUNNER_OS."
         #     # echo "Name of the repo is $env:GITHUB_REPOSITORY"
@@ -43,9 +43,18 @@ jobs:
         #   env:
         #     SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
         #   run: echo "The selected color is $SELECTED_COLOR"
-
-        - name:  mask value
-          run: echo "::add-mask::Mona The Octocat"
+  generate-a-secret-output:
+    runs-on: ubuntu-latest
+    steps:
+      - id: sets-a-secret
+        name: Generate, mask, and output a secret
+        run: |
+          the_secret=$((RANDOM))
+          echo "::add-mask::$the_secret"
+          echo "secret-number=$the_secret" >> "$GITHUB_OUTPUT"
+      - name: Use that secret output (protected by a mask)
+        run: |
+          echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
 
 
 
