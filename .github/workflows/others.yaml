@@ -21,7 +21,10 @@ jobs:
             echo "Name of the repo is $env:GITHUB_REPOSITORY"
             echo "Run id of the repo is $env:GITHUB_RUN_ID"
             echo "Action name  of the repo is $env:GITHUB_ACTION" 
+            echo "Action where its located is $env:GITHUB_ACTION_PATH"
+            echo "Owner and repositiory of the action $env:GITHUB_ACTION_REPOSITORY"
             echo "Initiated the workflow by $env:GITHUB_ACTOR"  
+            echo "ID of the who is Initiated the workflow  $env:GITHUB_ACTOR_ID"            
           
 
         
