@@ -8,7 +8,7 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     steps:
       - name: print the name
-        run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }} >> GITHUB_ENV"
+        run: echo "name ${{ github.actor }} run this branch ${{ github.event_name }} " >> GITHUB_ENV
   if_job:
     needs: build_job
     runs-on: 'ubuntu-latest'
